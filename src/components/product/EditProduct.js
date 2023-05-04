@@ -122,7 +122,7 @@ export default function EditUser() {
                       </Form.Group>
                     </Col>
                   </Row>
-                  <Button variant="primary" className="mt-2" size="lg" block="block" type="submit">
+                  <Button  className="mt-2" size="lg" block="block" type="submit">
                     Update
                   </Button>
                 </Form>

@@ -1,0 +1,42 @@
+.card-title{
+    color: #272727;
+    text-align: center;
+    margin-top: 30px;
+}
+.title{
+    color: #272727;
+  padding: 0 0 12px 0 ;
+  text-align: justify;
+}
+.title2{
+    color: #d61b1b;
+  
+  text-align: center;
+}
+
+.butao-top-create{
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 10px;
+    
+  
+}
+
+
+.butaoo{
+    color: blueviolet;
+}
+
+.butao-modal-container {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 22%;
+    display: inline;
+}
+
+.container-butaoo{
+    margin-top: 30px;
+    margin-left: 30px;
+}

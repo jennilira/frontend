@@ -4,8 +4,10 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./liststyle.css";
+import Modal from "../Modal/modal";
 //lsitar sabe
 export default function List() {
+  const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -54,21 +56,18 @@ export default function List() {
 
   return (
     <div className="container">
-      <div className="">
-        <div className="col-lg-12  ">
-            {/* mecher nessas coisas */}
+      {/* <div className=" butao-top">
+          
           <Link
-            className="btn btn-primary"
+            className="btn "
             to={"/product/create"}
           >
             Create Product
           </Link>
-        </div>
-       
-          <div className="">
-            <div className="">
-              <div className="tudo">
-                {/* <div>
+        </div> */}
+
+      <div className="tudo">
+        {/* <div>
                   <div className="product-card">
                     <div className="product-image">
                       <img src="" alt="" />
@@ -77,50 +76,44 @@ export default function List() {
                       <h2 className="product-name">titulo</h2>
                       <p className="product-description">descrição</p>
                       <div className="product-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn ">Buy Now</button>
                       </div>
                     </div>
                   </div>
                 </div> */}
-                <div>
-                  {products.length > 0 &&
-                    products.map((row, key) => (
-                      <div className="product-card">
-                        <div key={key}>
-                          <div className="product-image">
-                            <img
-                              alt=""
-                              width="50px"
-                              src={`http://localhost:8000/storage/product/image/${row.image}`}
-                            />
-                          </div>
-                          <div className="product-name">{row.title}</div>
-                          <div className="product-description">
-                            {row.description}
-                          </div>
-                          <div></div>
-                          <div>
-                            <Link
-                              to={`/product/edit/${row.id}`}
-                              className="btn btn-success me-2"
-                            >
-                              Edit
-                            </Link>
-                            <Button
-                              variant="danger"
-                              onClick={() => deleteProduct(row.id)}
-                            >
-                              Delete
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+        <div className="container">
+          {products.length > 0 &&
+            products.map((row, key) => (
+              <div className="product-card">
+                <div key={key}>
+                  <div className="product-image">
+                    <img
+                      alt=""
+                      width="50px"
+                      src={`http://localhost:8000/storage/product/image/${row.image}`}
+                    />
+                  </div>
+                  <div className="product-name">{row.title}</div>
+                  <div className="product-description">{row.description}</div>
+                  <div></div>
+                  <div className="butoes">
+                    <Link
+                      to={`/product/edit/${row.id}`}
+                      className="btn card-btn "
+                    >
+                      Edit
+                    </Link>
+                    <Button
+                      className="btn card-btn "
+                      onClick={() => deleteProduct(row.id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-       
+            ))}
+        </div>
       </div>
     </div>
   );

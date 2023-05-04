@@ -83,7 +83,7 @@ export default function List() {
                                                     <Link to={`/product/edit/${row.id}`} className='btn btn-success me-2'>
                                                         Edit
                                                     </Link>
-                                                    <Button variant="danger" onClick={()=>deleteProduct(row.id)}>
+                                                    <Button  onClick={()=>deleteProduct(row.id)}>
                                                         Delete
                                                     </Button>
                                                 </td>
